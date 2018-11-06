@@ -12,6 +12,7 @@
         <dog-card
           :key="dog.url"
           :url="dog.url"
+          @rated="(value)=> rateDog({url: dog.url,rating: value})"
         />
       </v-flex>
     </v-layout>
@@ -19,7 +20,7 @@
 </template>
 <script>
 import DogCard from './DogCard.vue';
-import {mapActions, mapGetters} from 'vuex';
+import {mapActions, mapGetters, mapMutations} from 'vuex';
 export default {
   components: {
     DogCard,
@@ -39,6 +40,12 @@ export default {
     this.fetchDogs();
   },
   methods: {
+    giveDogRating(rating) {
+      console.log(rating);
+    },
+    ...mapMutations([
+      'rateDog',
+    ]),
     ...mapActions([
       'fetchDogs',
     ]),

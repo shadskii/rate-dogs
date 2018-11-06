@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img 
+    <v-img
       aspect-ratio="1"
       :src="url"
     />
@@ -11,17 +11,22 @@
 </template>
 <script>
 export default {
-    props:{
-        url: {
-            type: String,
-            default: ''
-        }
+  props: {
+    url: {
+      type: String,
+      default: '',
     },
-    data(){
-        return {
-            rating: 1
-        }
-    }
-}
+  },
+  data() {
+    return {
+      rating: 1,
+    };
+  },
+  watch: {
+    rating(nv) {
+      this.$emit('rated', nv);
+    },
+  },
+};
 </script>
 

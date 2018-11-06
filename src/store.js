@@ -18,12 +18,13 @@ export default new Vuex.Store({
         dog.rating = payload.rating;
         dog.rated = true;
       }
+      return dog;
     })),
     addDogs: (state, dogs) => (state.dogs = [...state.dogs, ...dogs]),
   },
   actions: {
     fetchDogs({commit, state}) {
-      fetch(`${RANDOM}/5`, {
+      fetch(`${RANDOM}/25`, {
         method: 'get',
       })
           .then((resp) => resp.json())
