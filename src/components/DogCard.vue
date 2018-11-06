@@ -24,7 +24,7 @@ export default {
   },
   watch: {
     rating(nv) {
-      this.$emit('rated', nv);
+      setTimeout(()=> this.$emit('rated', nv), 500);
     },
   },
 };
