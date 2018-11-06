@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <v-img
-      aspect-ratio="1"
       :src="url"
+      aspect-ratio="1"
     />
     <div class="text-xs-center mt-2">
       <v-rating
