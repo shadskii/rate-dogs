@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>We Rate Dogs</span>
@@ -13,17 +13,17 @@
 </template>
 
 <script>
-import DogContainer from './components/DogContainer'
+import DogContainer from './components/DogContainer';
 
 export default {
   name: 'App',
   components: {
-    DogContainer
+    DogContainer,
   },
-  data () {
+  data() {
     return {
       //
-    }
-  }
-}
+    };
+  },
+};
 </script>

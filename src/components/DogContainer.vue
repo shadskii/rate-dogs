@@ -15,19 +15,30 @@
 </template>
 <script>
 import DogCard from './DogCard.vue';
+import {mapActions} from 'vuex';
 export default {
   components: {
     DogCard,
   },
   data() {
     return {
-      dogs: [
-        {
-          url: 'https://images.dog.ceo/breeds/pembroke/n02113023_12248.jpg',
-        },
-      ],
+
     };
   },
+  computed: {
+    dogs() {
+      return this.$store.state.dogs;
+    },
+  },
+  mounted() {
+    this.fetchDogs();
+  },
+  methods: {
+    ...mapActions([
+      'fetchDogs',
+    ]),
+  },
+
 
 };
 </script>
