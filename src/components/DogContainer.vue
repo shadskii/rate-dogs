@@ -4,16 +4,22 @@
       row
       wrap
     >
-      <v-flex
-        v-for="dog in unRatedDogs"
-        :key="`flex-${dog.url}`"
-        xs12
-      >
-        <dog-card
-          :key="dog.url"
-          :url="dog.url"
-          @rated="(value)=> rateDog({url: dog.url,rating: value})"
-        />
+      <v-flex>
+        <v-slide-y-transition
+          group
+        >
+          <v-flex
+            v-for="dog in unRatedDogs"
+            :key="`flex-${dog.url}`"
+            xs12
+          >
+            <dog-card
+              :key="dog.url"
+              :url="dog.url"
+              @rated="(value)=> rateDog({url: dog.url,rating: value})"
+            />
+          </v-flex>
+        </v-slide-y-transition>
       </v-flex>
     </v-layout>
   </v-container>

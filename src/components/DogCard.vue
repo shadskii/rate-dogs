@@ -5,7 +5,10 @@
       :src="url"
     />
     <div class="text-xs-center mt-2">
-      <v-rating v-model="rating" />
+      <v-rating
+        v-model="rating"
+        medium
+      />
     </div>
   </v-card>
 </template>
