@@ -9,27 +9,39 @@
           group
         >
           <v-flex
-            v-for="dog in unRatedDogs"
+            v-for="dog in dogs"
             :key="`flex-${dog.url}`"
             xs12
           >
             <dog-card
               :key="dog.url"
               :url="dog.url"
+              :rate="dog.rating"
+              :readonly="favorites"
               @rated="(value)=> rateDog({url: dog.url,rating: value})"
             />
           </v-flex>
         </v-slide-y-transition>
+
+        <br>&nbsp;
+        <br> &nbsp;
       </v-flex>
+
     </v-layout>
   </v-container>
 </template>
 <script>
 import DogCard from './DogCard.vue';
-import {mapActions, mapGetters, mapMutations} from 'vuex';
+import {mapGetters, mapMutations} from 'vuex';
 export default {
   components: {
     DogCard,
+  },
+  props: {
+    favorites: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -37,20 +49,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['unRatedDogs']),
+    ...mapGetters(['unRatedDogs', 'favoriteDogs']),
     dogs() {
-      return this.$store.state.dogs;
+      return this.favorites ? this.favoriteDogs : this.unRatedDogs;
     },
-  },
-  mounted() {
-    this.fetchDogs();
   },
   methods: {
     ...mapMutations([
       'rateDog',
-    ]),
-    ...mapActions([
-      'fetchDogs',
     ]),
   },
 

@@ -10,13 +10,49 @@
     </v-toolbar>
 
     <v-content>
-      <dog-container />
+      <v-fade-transition>
+        <dog-container
+          v-if="activeBtn === 0"
+        />
+      </v-fade-transition>
+      <dog-container
+        v-if="activeBtn === 1"
+        favorites
+      />
     </v-content>
+    <v-bottom-nav
+      :active.sync="activeBtn"
+      :value="showNav"
+      fixed
+    >
+      <v-btn
+        flat
+        color="secondary"
+      >
+        <span>Rate</span>
+        <v-icon>mdi-paw</v-icon>
+      </v-btn>
+      <v-btn
+        flat
+        color="secondary"
+      >
+        <span>Favorites</span>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <v-btn
+        flat
+        color="secondary"
+      >
+        <span>Profile</span>
+        <v-icon>mdi-account</v-icon>
+      </v-btn>
+    </v-bottom-nav>
   </v-app>
 </template>
 
 <script>
 import DogContainer from './components/DogContainer';
+import {mapActions, mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: 'App',
@@ -25,8 +61,20 @@ export default {
   },
   data() {
     return {
-      //
+      activeBtn: 0,
+      showNav: true,
     };
+  },
+  methods: {
+    ...mapActions(['fetchDogs']),
+  },
+  watch: {
+    activeBtn(nv) {
+      console.log(nv + 'hi');
+    },
+  },
+  mounted() {
+    this.fetchDogs();
   },
 };
 </script>

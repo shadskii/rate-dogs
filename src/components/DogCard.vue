@@ -6,7 +6,15 @@
     />
     <div class="text-xs-center mt-2">
       <v-rating
+        v-if="!readonly"
         v-model="rating"
+        :value="rate"
+        medium
+      />
+      <v-rating
+        v-if="readonly"
+        :value="rate"
+        readonly
         medium
       />
     </div>
@@ -18,6 +26,14 @@ export default {
     url: {
       type: String,
       default: '',
+    },
+    rate: {
+      type: Number,
+      default: 0,
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
