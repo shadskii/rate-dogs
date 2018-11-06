@@ -13,7 +13,7 @@
             Anonymous Dog Lover
           </v-card-title>
           <v-card-text>
-            Amazing
+            {{ rank }}
             <pie-chart :data="dogData" />
           </v-card-text>
 
@@ -30,6 +30,20 @@ export default {
     PieChart,
   },
   computed: {
+    rank() {
+      const fiveStars = this.dogData[4];
+      if (fiveStars < 1) {
+        return 'Amatuer Patter';
+      } else if (fiveStars < 5) {
+        return 'Journeyman Patter';
+      } else if ( fiveStars < 10) {
+        return 'Expert Patter';
+      } else if (fiveStars < 15) {
+        return 'Supreme Patter';
+      } else {
+        return 'Heckin\' Awesome Patter';
+      }
+    },
     ...mapGetters(['dogData']),
   },
 };
