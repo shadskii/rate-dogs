@@ -32,7 +32,7 @@
 </template>
 <script>
 import DogCard from './DogCard.vue';
-import {mapGetters, mapMutations} from 'vuex';
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
   components: {
     DogCard,
@@ -54,7 +54,17 @@ export default {
       return this.favorites ? this.favoriteDogs : this.unRatedDogs;
     },
   },
+  watch: {
+    unRatedDogs(nv, ov) {
+      if (nv.length < 5) {
+        this.fetchDogs();
+      }
+    },
+  },
   methods: {
+    ...mapActions([
+      'fetchDogs',
+    ]),
     ...mapMutations([
       'rateDog',
     ]),
