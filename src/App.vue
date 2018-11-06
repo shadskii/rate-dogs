@@ -52,7 +52,7 @@
 
 <script>
 import DogContainer from './components/DogContainer';
-import {mapActions, mapGetters, mapMutations} from 'vuex';
+import {mapActions} from 'vuex';
 
 export default {
   name: 'App',
@@ -65,16 +65,11 @@ export default {
       showNav: true,
     };
   },
-  methods: {
-    ...mapActions(['fetchDogs']),
-  },
-  watch: {
-    activeBtn(nv) {
-      console.log(nv + 'hi');
-    },
-  },
   mounted() {
     this.fetchDogs();
+  },
+  methods: {
+    ...mapActions(['fetchDogs']),
   },
 };
 </script>
