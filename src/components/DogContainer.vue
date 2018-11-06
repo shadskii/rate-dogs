@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <v-layout>
-      <v-flex 
-        v-for="dog in dogs" 
+      <v-flex
+        v-for="dog in dogs"
         :key="`flex-${dog.url}`"
       >
-        <dog-card 
-          :key="dog.url" 
+        <dog-card
+          :key="dog.url"
           :url="dog.url"
         />
       </v-flex>
@@ -16,18 +16,18 @@
 <script>
 import DogCard from './DogCard.vue';
 export default {
-    components:{
-        DogCard
-    },
-    data(){
-        return{
-            dogs: [
-                {
-                    url: "https://images.dog.ceo/breeds/pembroke/n02113023_12248.jpg"
-                }
-            ]
-        }
-    }
-    
-}
+  components: {
+    DogCard,
+  },
+  data() {
+    return {
+      dogs: [
+        {
+          url: 'https://images.dog.ceo/breeds/pembroke/n02113023_12248.jpg',
+        },
+      ],
+    };
+  },
+
+};
 </script>
