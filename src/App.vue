@@ -1,6 +1,9 @@
 <template>
   <v-app dark>
-    <v-toolbar app>
+    <v-toolbar
+      app
+      color="primary"
+    >
       <v-toolbar-title class="headline text-uppercase">
         <span>We Rate Dogs</span>
       </v-toolbar-title>

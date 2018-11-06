@@ -40,9 +40,6 @@ export default {
     this.fetchDogs();
   },
   methods: {
-    giveDogRating(rating) {
-      console.log(rating);
-    },
     ...mapMutations([
       'rateDog',
     ]),
