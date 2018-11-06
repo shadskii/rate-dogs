@@ -12,6 +12,13 @@ export default new Vuex.Store({
   getters: {
     unRatedDogs: (state) => (state.dogs.filter((dog) => !dog.rated)),
     favoriteDogs: (state) => (state.dogs.filter((dog) => dog.rating === 5)),
+    dogData: (state) => {
+      const data = Array(5).fill(0);
+      state.dogs
+          .filter((dog) => dog.rated)
+          .forEach((dog) => data[(+dog.rating)-1]++);
+      return data;
+    },
   },
   mutations: {
     rateDog: (state, payload) => (state.dogs = state.dogs.map((dog) =>{

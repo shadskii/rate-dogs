@@ -19,6 +19,7 @@
         v-if="activeBtn === 1"
         favorites
       />
+      <profile-page v-if="activeBtn === 2" />
     </v-content>
     <v-bottom-nav
       :active.sync="activeBtn"
@@ -52,12 +53,14 @@
 
 <script>
 import DogContainer from './components/DogContainer';
+import ProfilePage from './components/ProfilePage';
 import {mapActions} from 'vuex';
 
 export default {
   name: 'App',
   components: {
     DogContainer,
+    ProfilePage,
   },
   data() {
     return {
