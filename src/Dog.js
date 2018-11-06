@@ -9,5 +9,6 @@ export default class {
   constructor(url) {
     this.url = url;
     this.rating = 1;
+    this.rated = false;
   }
 }

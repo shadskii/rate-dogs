@@ -9,23 +9,27 @@ export default new Vuex.Store({
   state: {
     dogs: [],
   },
+  getters: {
+    unRatedDogs: (state) => (state.dogs.filter((dog) => !dog.rated)),
+  },
   mutations: {
     rateDog: (state, payload) => (state.dogs = state.dogs.map((dog) =>{
       if (payload.url === dog.url) {
         dog.rating = payload.rating;
+        dog.rated = true;
       }
     })),
-    addDog: (state, dog) => (state.dogs = [...state.dogs, dog]),
+    addDogs: (state, dogs) => (state.dogs = [...state.dogs, ...dogs]),
   },
   actions: {
     fetchDogs({commit, state}) {
-      fetch(RANDOM, {
+      fetch(`${RANDOM}/5`, {
         method: 'get',
       })
           .then((resp) => resp.json())
           .then((json) => json.message)
-          .then((json) => new Dog(json))
-          .then((dog) => commit('addDog', dog));
+          .then((json) => json.map((dj) => new Dog(dj)))
+          .then((dogs) => commit('addDogs', dogs));
     },
   },
 });
