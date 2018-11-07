@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/rate-dogs/robots.txt"
   },
   {
-    "revision": "942ceb388218c8190ab3",
-    "url": "/rate-dogs/js/chunk-vendors.4ba5c57c.js"
+    "revision": "b3a8803c90da53ef4ef4",
+    "url": "/rate-dogs/js/chunk-vendors.483d34eb.js"
   },
   {
-    "revision": "d844a853ff85f849236f",
-    "url": "/rate-dogs/js/app.9ed6fc52.js"
+    "revision": "1172411c4d7433222c93",
+    "url": "/rate-dogs/js/app.a22719f8.js"
   },
   {
-    "revision": "f08c86ed7ac94e88f6f8edae1d1c5317",
+    "revision": "bcecbdf89eca9605cd0c329ae916e0c2",
     "url": "/rate-dogs/index.html"
   },
   {
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/rate-dogs/fonts/materialdesignicons-webfont.023db912.ttf"
   },
   {
-    "revision": "942ceb388218c8190ab3",
+    "revision": "b3a8803c90da53ef4ef4",
     "url": "/rate-dogs/css/chunk-vendors.ccce70f1.css"
   }
 ];
