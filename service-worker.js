@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/rate-dogs/precache-manifest.70e54e96f4cad6a951a21fd3b8c8c01e.js"
+  "/rate-dogs/precache-manifest.45c6fbcfb5bc6cf645ffd4645dcb4ff3.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "rate-dogs"});
