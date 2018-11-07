@@ -18,7 +18,7 @@
               :url="dog.url"
               :rate="dog.rating"
               :readonly="favorites"
-              @rated="(value)=> rateDog({url: dog.url,rating: value})"
+              @rated="(value)=> rateOrNotify({url: dog.url,rating: value})"
             />
           </v-flex>
         </v-slide-y-transition>
@@ -26,7 +26,28 @@
         <br>&nbsp;
         <br> &nbsp;
       </v-flex>
-
+      <div class="text-xs-center">
+        <v-dialog
+          v-model="dialog"
+          width="500"
+        >
+          <v-card>
+            <v-card-title primary-title>
+              All dogs deserve at least 1 star. Try again
+            </v-card-title>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+                color="primary"
+                flat
+                @click="dialog = false"
+              >
+                I'll Try Again
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
     </v-layout>
   </v-container>
 </template>
@@ -45,7 +66,7 @@ export default {
   },
   data() {
     return {
-
+      dialog: false,
     };
   },
   computed: {
@@ -65,6 +86,13 @@ export default {
     },
   },
   methods: {
+    rateOrNotify(payload) {
+      if (payload.rating <2) {
+        this.dialog = true;
+      } else {
+        this.rateDog(payload);
+      }
+    },
     ...mapActions([
       'fetchDogs',
     ]),
