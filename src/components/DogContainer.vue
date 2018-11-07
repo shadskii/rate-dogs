@@ -49,7 +49,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['unRatedDogs', 'favoriteDogs']),
+    ...mapGetters([
+      'unRatedDogs',
+      'favoriteDogs',
+    ]),
     dogs() {
       return this.favorites ? this.favoriteDogs : this.unRatedDogs;
     },
