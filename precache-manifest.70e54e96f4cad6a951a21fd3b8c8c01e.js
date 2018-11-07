@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/rate-dogs/js/app.cbefea68.js"
   },
   {
-    "revision": "f8cab0e2ae911252a523a847212b6bee",
+    "revision": "d1cf52595e78d0a778ee4a24ba7d907a",
     "url": "/rate-dogs/index.html"
   },
   {
