@@ -7,28 +7,29 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    dogs: [],
+    unRateddogs: [],
+    ratedDogs: [],
   },
   getters: {
-    unRatedDogs: (state) => (state.dogs.filter((dog) => !dog.rated)),
-    favoriteDogs: (state) => (state.dogs.filter((dog) => dog.rating === 5)),
+    unRatedDogs: (state) => (state.unRateddogs),
+    favoriteDogs: (state) => (state.ratedDogs.filter((dog) => dog.rating === 5)),
     dogData: (state) => {
       const data = Array(5).fill(0);
-      state.dogs
-          .filter((dog) => dog.rated)
-          .forEach((dog) => data[(+dog.rating)-1]++);
+      state.ratedDogs.forEach((dog) => data[(+dog.rating)-1]++);
       return data;
     },
   },
   mutations: {
-    rateDog: (state, payload) => (state.dogs = state.dogs.map((dog) =>{
+    rateDog: (state, payload) => (state.unRateddogs = state.unRateddogs.map((dog) =>{
       if (payload.url === dog.url) {
         dog.rating = payload.rating;
         dog.rated = true;
+        state.ratedDogs = [dog, ...state.ratedDogs];
       }
       return dog;
-    })),
-    addDogs: (state, dogs) => (state.dogs = [...state.dogs, ...dogs]),
+    }).filter((dog) => !dog.rated)
+    ),
+    addDogs: (state, dogs) => (state.unRateddogs = [...state.unRateddogs, ...dogs]),
   },
   actions: {
     fetchDogs({commit, state}) {
