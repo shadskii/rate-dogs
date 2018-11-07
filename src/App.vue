@@ -25,6 +25,7 @@
       :active.sync="activeBtn"
       :value="showNav"
       fixed
+      height="75"
     >
       <v-btn
         flat
