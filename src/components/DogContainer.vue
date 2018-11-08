@@ -33,7 +33,7 @@
         >
           <v-card>
             <v-card-title primary-title>
-              All dogs deserve at least 1 star. Try again
+              All dogs deserve at least 2 stars. Try again
             </v-card-title>
             <v-card-actions>
               <v-spacer />
