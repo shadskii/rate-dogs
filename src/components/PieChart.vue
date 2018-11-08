@@ -11,15 +11,15 @@ export default {
   },
   mounted() {
     this.renderChart({
-      labels: ['5 Star', '4 Star', '3 Star', '2 Star', '1 Star'],
+      labels: ['1 Star', '2 Star', '3 Star', '4 Star', '5 Star'],
       datasets: [
         {
           backgroundColor: [
-            '#41B883',
+            '#F0B0AA',
             '#E46651',
             '#00D8FF',
             '#DD1B16',
-            '#F0B0AA',
+            '#41B883',
           ],
           data: this.data,
         },
