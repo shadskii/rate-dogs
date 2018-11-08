@@ -1,17 +1,21 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersistence from 'vuex-persist';
 import Dog from './Dog';
 import {RANDOM} from './api';
 
 Vue.use(Vuex);
-
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+  reducer: (state) => ({ratedDogs: state.ratedDogs}),
+});
 export default new Vuex.Store({
   state: {
-    unRateddogs: [],
+    unRatedDogs: [],
     ratedDogs: [],
   },
   getters: {
-    unRatedDogs: (state) => (state.unRateddogs),
+    unRatedDogs: (state) => (state.unRatedDogs),
     favoriteDogs: (state) => (state.ratedDogs.filter((dog) => dog.rating === 5)),
     dogData: (state) => {
       const data = Array(5).fill(0);
@@ -20,7 +24,7 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    rateDog: (state, payload) => (state.unRateddogs = state.unRateddogs.map((dog) =>{
+    rateDog: (state, payload) => (state.unRatedDogs = state.unRatedDogs.map((dog) =>{
       if (payload.url === dog.url) {
         dog.rating = payload.rating;
         dog.rated = true;
@@ -29,7 +33,7 @@ export default new Vuex.Store({
       return dog;
     }).filter((dog) => !dog.rated)
     ),
-    addDogs: (state, dogs) => (state.unRateddogs = [...state.unRateddogs, ...dogs]),
+    addDogs: (state, dogs) => (state.unRatedDogs = [...state.unRatedDogs, ...dogs]),
   },
   actions: {
     fetchDogs({commit, state}) {
@@ -42,4 +46,5 @@ export default new Vuex.Store({
           .then((dogs) => commit('addDogs', dogs));
     },
   },
+  plugins: [vuexLocal.plugin],
 });
