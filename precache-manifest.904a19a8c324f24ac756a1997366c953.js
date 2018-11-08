@@ -8,11 +8,11 @@ self.__precacheManifest = [
     "url": "/rate-dogs/js/chunk-vendors.483d34eb.js"
   },
   {
-    "revision": "cd50eeff50b4f1216c70",
-    "url": "/rate-dogs/js/app.0dea5d2a.js"
+    "revision": "761a8907721b2199fc87",
+    "url": "/rate-dogs/js/app.618eb0d7.js"
   },
   {
-    "revision": "3c181ff0de94743f0cbdb62a1fcd2657",
+    "revision": "b16f71f4908c4e66aeacbf95833ff997",
     "url": "/rate-dogs/index.html"
   },
   {
