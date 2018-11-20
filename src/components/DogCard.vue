@@ -3,6 +3,7 @@
     <v-img
       :src="url"
       aspect-ratio="1"
+      :lazy-src="require('../assets/logo.png')"
     />
     <div class="text-xs-center mt-2">
       <v-rating
