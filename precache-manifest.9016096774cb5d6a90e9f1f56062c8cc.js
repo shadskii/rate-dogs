@@ -1,5 +1,9 @@
 self.__precacheManifest = [
   {
+    "revision": "5d43a6f507961589ab369ccc6f6d301b",
+    "url": "/rate-dogs/fonts/materialdesignicons-webfont.5d43a6f5.woff"
+  },
+  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/rate-dogs/robots.txt"
   },
@@ -8,11 +12,11 @@ self.__precacheManifest = [
     "url": "/rate-dogs/js/chunk-vendors.483d34eb.js"
   },
   {
-    "revision": "761a8907721b2199fc87",
-    "url": "/rate-dogs/js/app.618eb0d7.js"
+    "revision": "a20286356c9f8cca9609",
+    "url": "/rate-dogs/js/app.fbbad49c.js"
   },
   {
-    "revision": "b16f71f4908c4e66aeacbf95833ff997",
+    "revision": "6fa607e85cf65f309665eab8162a8c22",
     "url": "/rate-dogs/index.html"
   },
   {
@@ -22,10 +26,6 @@ self.__precacheManifest = [
   {
     "revision": "6536e4067e72c89cd3f1530d83e9888c",
     "url": "/rate-dogs/fonts/materialdesignicons-webfont.6536e406.woff2"
-  },
-  {
-    "revision": "5d43a6f507961589ab369ccc6f6d301b",
-    "url": "/rate-dogs/fonts/materialdesignicons-webfont.5d43a6f5.woff"
   },
   {
     "revision": "41da82f6e715b98dc05e12686231e831",
@@ -38,5 +38,9 @@ self.__precacheManifest = [
   {
     "revision": "b3a8803c90da53ef4ef4",
     "url": "/rate-dogs/css/chunk-vendors.ccce70f1.css"
+  },
+  {
+    "revision": "a20286356c9f8cca9609",
+    "url": "/rate-dogs/css/app.cab9b0ec.css"
   }
 ];
