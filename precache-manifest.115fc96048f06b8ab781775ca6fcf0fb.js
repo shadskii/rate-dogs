@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/rate-dogs/img/splashscreens/iphone6_splash.png"
   },
   {
-    "revision": "6eb1954e95ca0e06b75cef4539425b32",
+    "revision": "e2b4fcca95638c8a1b66de05d57fae77",
+    "url": "/rate-dogs/img/splashscreens/iphone5_splash.png"
+  },
+  {
+    "revision": "ca2015fcb2e46e5f93510ed3e0e2ce84",
     "url": "/rate-dogs/index.html"
   },
   {
-    "revision": "a20286356c9f8cca9609",
-    "url": "/rate-dogs/js/app.fbbad49c.js"
-  },
-  {
-    "revision": "e2b4fcca95638c8a1b66de05d57fae77",
-    "url": "/rate-dogs/img/splashscreens/iphone5_splash.png"
+    "revision": "a68551ae27e4a59c00b3",
+    "url": "/rate-dogs/js/app.53c5d05f.js"
   },
   {
     "revision": "3dbab7be8a651a9d835dd87485c82b89",
@@ -58,6 +58,10 @@ self.__precacheManifest = [
   {
     "revision": "6affab38859a2f4dd4fab3bec40d02e2",
     "url": "/rate-dogs/img/materialdesignicons-webfont.6affab38.svg"
+  },
+  {
+    "revision": "7938754bcb646d0746b856a395d8c91e",
+    "url": "/rate-dogs/img/logo.7938754b.png"
   },
   {
     "revision": "6536e4067e72c89cd3f1530d83e9888c",
@@ -80,7 +84,7 @@ self.__precacheManifest = [
     "url": "/rate-dogs/css/chunk-vendors.ccce70f1.css"
   },
   {
-    "revision": "a20286356c9f8cca9609",
+    "revision": "a68551ae27e4a59c00b3",
     "url": "/rate-dogs/css/app.cab9b0ec.css"
   }
 ];
