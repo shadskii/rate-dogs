@@ -100,7 +100,5 @@ export default {
       'rateDog',
     ]),
   },
-
-
 };
 </script>
