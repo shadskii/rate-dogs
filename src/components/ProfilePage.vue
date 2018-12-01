@@ -34,11 +34,11 @@ export default {
       const fiveStars = this.dogData[4];
       if (fiveStars < 1) {
         return 'Amatuer Patter';
-      } else if (fiveStars < 5) {
+      } else if (fiveStars < 25) {
         return 'Journeyman Patter';
-      } else if ( fiveStars < 10) {
+      } else if ( fiveStars < 100) {
         return 'Expert Patter';
-      } else if (fiveStars < 15) {
+      } else if (fiveStars < 150) {
         return 'Supreme Patter';
       } else {
         return 'Heckin\' Awesome Patter';
