@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/rate-dogs/img/splashscreens/ipadpro3_splash.png"
   },
   {
-    "revision": "b3a8803c90da53ef4ef4",
+    "revision": "95aad0a4cfc99cf3c002",
     "url": "/rate-dogs/js/chunk-vendors.483d34eb.js"
   },
   {
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/rate-dogs/img/splashscreens/iphone5_splash.png"
   },
   {
-    "revision": "ca2015fcb2e46e5f93510ed3e0e2ce84",
+    "revision": "14c67ed79a4bf253221d365b36de3b17",
     "url": "/rate-dogs/index.html"
   },
   {
-    "revision": "a68551ae27e4a59c00b3",
-    "url": "/rate-dogs/js/app.53c5d05f.js"
+    "revision": "16de31dc9d1437aea855",
+    "url": "/rate-dogs/js/app.68cc62bc.js"
   },
   {
     "revision": "3dbab7be8a651a9d835dd87485c82b89",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/rate-dogs/fonts/materialdesignicons-webfont.023db912.ttf"
   },
   {
-    "revision": "b3a8803c90da53ef4ef4",
-    "url": "/rate-dogs/css/chunk-vendors.ccce70f1.css"
+    "revision": "95aad0a4cfc99cf3c002",
+    "url": "/rate-dogs/css/chunk-vendors.0dab7977.css"
   },
   {
-    "revision": "a68551ae27e4a59c00b3",
+    "revision": "16de31dc9d1437aea855",
     "url": "/rate-dogs/css/app.cab9b0ec.css"
   }
 ];
