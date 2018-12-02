@@ -1,11 +1,25 @@
 <template>
   <v-app dark>
     <v-toolbar
+      :extended="iosPwa"
       app
+      :extension-height="iosPwa && iphoneX ? 44 : 20"
       color="primary"
     >
-      <v-toolbar-title class="headline text-uppercase">
-        <span>We Rate Dogs</span>
+      <div
+        v-if="iosPwa"
+        slot="extension"
+        class="pb-3"
+      >
+        <span
+          class="headline text-uppercase font-weight-medium"
+        >We Rate Dogs</span>
+      </div>
+      <v-toolbar-title
+        v-else
+        class="headline text-uppercase font-weight-medium"
+      >
+        We Rate Dogs
       </v-toolbar-title>
     </v-toolbar>
 
@@ -56,6 +70,8 @@
 import DogContainer from './components/DogContainer';
 import ProfilePage from './components/ProfilePage';
 import {mapActions} from 'vuex';
+import {isIphoneX, isPwa, isIos} from './phoneDetection';
+
 
 export default {
   name: 'App',
@@ -67,6 +83,8 @@ export default {
     return {
       activeBtn: 0,
       showNav: true,
+      iphoneX: isIphoneX(),
+      iosPwa: isPwa() && isIos(),
     };
   },
   mounted() {
