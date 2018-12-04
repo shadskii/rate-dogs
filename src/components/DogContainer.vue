@@ -3,8 +3,12 @@
     <v-layout
       row
       wrap
+      justify-center
     >
-      <v-flex>
+      <v-flex
+        xs12
+        md6
+      >
         <v-slide-y-transition
           group
         >
